@@ -38,8 +38,14 @@ export default function HomePage() {
   const [error, setError] = useState("")
   const [guestUsed, setGuestUsed] = useState(false)
 
+  const supabaseConfigured = !!(
+    process.env.NEXT_PUBLIC_SUPABASE_URL?.startsWith("http") &&
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  )
+
   // Load session
   useEffect(() => {
+    if (!supabaseConfigured) return
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSbUser(session?.user ?? null)
     })
@@ -51,7 +57,7 @@ export default function HomePage() {
 
   // Load user credits + api key
   const loadUserData = useCallback(async () => {
-    if (!sbUser) return
+    if (!sbUser || !supabaseConfigured) return
     const [c, k] = await Promise.all([getUserCredits(sbUser.id), getUserApiKey(sbUser.id)])
     setCredits(c)
     setUserApiKey(k)
