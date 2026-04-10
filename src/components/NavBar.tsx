@@ -1,6 +1,8 @@
 "use client"
 import { useState } from "react"
-import { Globe2, LogOut, User } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { LogOut, User } from "lucide-react"
 import AuthModal from "./AuthModal"
 
 interface NavBarProps {
@@ -15,10 +17,19 @@ export default function NavBar({ userEmail, onLogout }: NavBarProps) {
     <>
       <nav className="w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Globe2 className="w-5 h-5 text-indigo-400" />
-            <span className="font-bold text-slate-100 text-sm">Multi-Language Keyword Finder</span>
-          </div>
+          <Link href="/" className="flex items-center gap-2.5 min-w-0 hover:opacity-90 transition-opacity">
+            <Image
+              src="/logo-nav.png"
+              alt="Multi-Language Keyword Finder"
+              width={32}
+              height={32}
+              className="h-8 w-8 shrink-0 rounded-lg object-contain"
+              priority
+            />
+            <span className="font-bold text-slate-100 text-sm truncate">
+              Multi-Language Keyword Finder
+            </span>
+          </Link>
           <div className="flex items-center gap-3">
             {userEmail ? (
               <>
