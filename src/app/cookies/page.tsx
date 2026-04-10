@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
+import { LEGAL_ENTITY_NAME, LEGAL_ENTITY_SHORT, SERVICE_NAME } from "@/lib/legal-entity"
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Multi-Language Keyword Finder",
   description:
-    "How Multi-Language Keyword Finder uses cookies and similar technologies, including Google Analytics.",
+    "How MetaForge Technology Limited uses cookies on Multi-Language Keyword Finder, including Google Analytics.",
   robots: { index: true, follow: true },
 }
 
@@ -15,9 +16,9 @@ export default function CookiesPage() {
       <LegalHeader />
       <LegalArticle title="Cookie Policy" lastUpdated="April 10, 2026">
         <p>
-          This Cookie Policy explains how <strong>Multi-Language Keyword Finder</strong> (“we”, “us”) uses
-          cookies and similar technologies on our website. It should be read together with our{" "}
-          <a href="/privacy">Privacy Policy</a>.
+          This Cookie Policy explains how <strong>{LEGAL_ENTITY_NAME}</strong> (“{LEGAL_ENTITY_SHORT}”, “we”,
+          “us”) uses cookies and similar technologies in connection with <strong>{SERVICE_NAME}</strong> on our
+          website. It should be read together with our <a href="/privacy">Privacy Policy</a>.
         </p>
 
         <h2>1. What are cookies?</h2>
@@ -79,7 +80,8 @@ export default function CookiesPage() {
 
         <h2>7. Contact</h2>
         <p>
-          Questions: <a href="mailto:privacy@globalkwfinder.com">privacy@globalkwfinder.com</a>.
+          Questions for <strong>{LEGAL_ENTITY_NAME}</strong>:{" "}
+          <a href="mailto:privacy@globalkwfinder.com">privacy@globalkwfinder.com</a>.
         </p>
       </LegalArticle>
     </div>

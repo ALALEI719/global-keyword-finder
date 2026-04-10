@@ -1,15 +1,14 @@
 import type { Metadata } from "next"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
+import { LEGAL_ENTITY_NAME, LEGAL_ENTITY_SHORT, SERVICE_NAME, SITE_URL } from "@/lib/legal-entity"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Multi-Language Keyword Finder",
   description:
-    "How we collect, use, and protect your data when you use our multilingual keyword research tool.",
+    "How MetaForge Technology Limited collects, uses, and protects your data when you use Multi-Language Keyword Finder.",
   robots: { index: true, follow: true },
 }
-
-const SITE = "https://globalkwfinder.com"
 
 export default function PrivacyPage() {
   return (
@@ -17,10 +16,11 @@ export default function PrivacyPage() {
       <LegalHeader />
       <LegalArticle title="Privacy Policy" lastUpdated="April 10, 2026">
         <p>
-          This Privacy Policy describes how <strong>Multi-Language Keyword Finder</strong> (“we”, “us”, or
-          “our”), operated in connection with the website{" "}
-          <a href={SITE}>{SITE.replace("https://", "")}</a> and related services (collectively, the
-          “Service”), collects, uses, stores, and shares information when you use the Service.
+          This Privacy Policy describes how <strong>{LEGAL_ENTITY_NAME}</strong> (“{LEGAL_ENTITY_SHORT}”, “we”,
+          “us”, or “our”) collects, uses, stores, and shares information when you use{" "}
+          <strong>{SERVICE_NAME}</strong>, offered through the website{" "}
+          <a href={SITE_URL}>{SITE_URL.replace("https://", "")}</a> and related services (collectively, the
+          “Service”).
         </p>
         <p>
           By using the Service, you agree to this Privacy Policy. If you do not agree, please do not use the
@@ -29,9 +29,9 @@ export default function PrivacyPage() {
 
         <h2>1. Who we are</h2>
         <p>
-          The Service is a web application that helps users discover and analyse keywords across languages and
-          markets. Processing may occur on infrastructure provided by our hosting and authentication partners
-          (for example, Vercel and Supabase).
+          The Service is operated by <strong>{LEGAL_ENTITY_NAME}</strong>. {SERVICE_NAME} is a web application
+          that helps users discover and analyse keywords across languages and markets. Processing may occur on
+          infrastructure provided by our hosting and authentication partners (for example, Vercel and Supabase).
         </p>
 
         <h2>2. Information we collect</h2>
@@ -159,7 +159,8 @@ export default function PrivacyPage() {
 
         <h2>12. Contact</h2>
         <p>
-          For privacy-related requests or questions, please contact us at{" "}
+          For privacy-related requests or questions directed to <strong>{LEGAL_ENTITY_NAME}</strong>, please
+          contact us at{" "}
           <a href="mailto:privacy@globalkwfinder.com">privacy@globalkwfinder.com</a>. If that address is not yet
           active, use the primary contact method shown on the homepage or your account correspondence.
         </p>

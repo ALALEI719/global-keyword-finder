@@ -1,15 +1,14 @@
 import type { Metadata } from "next"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
+import { LEGAL_ENTITY_NAME, LEGAL_ENTITY_SHORT, SERVICE_NAME, SITE_URL } from "@/lib/legal-entity"
 
 export const metadata: Metadata = {
   title: "Terms of Service | Multi-Language Keyword Finder",
   description:
-    "Terms governing your use of the Multi-Language Keyword Finder SEO research tool and related services.",
+    "Terms governing your use of Multi-Language Keyword Finder, a service operated by MetaForge Technology Limited.",
   robots: { index: true, follow: true },
 }
-
-const SITE = "https://globalkwfinder.com"
 
 export default function TermsPage() {
   return (
@@ -17,9 +16,10 @@ export default function TermsPage() {
       <LegalHeader />
       <LegalArticle title="Terms of Service" lastUpdated="April 10, 2026">
         <p>
-          These Terms of Service (“Terms”) govern your access to and use of <strong>Multi-Language Keyword Finder</strong>{" "}
-          and the website <a href={SITE}>{SITE.replace("https://", "")}</a> (the “Service”). By accessing or using
-          the Service, you agree to these Terms. If you do not agree, do not use the Service.
+          These Terms of Service (“Terms”) govern your access to and use of <strong>{SERVICE_NAME}</strong> (the
+          “Service”), provided by <strong>{LEGAL_ENTITY_NAME}</strong> (“{LEGAL_ENTITY_SHORT}”, “we”, “us”, or “our”)
+          through the website <a href={SITE_URL}>{SITE_URL.replace("https://", "")}</a>. By accessing or using the
+          Service, you agree to these Terms. If you do not agree, do not use the Service.
         </p>
 
         <h2>1. The Service</h2>
@@ -72,10 +72,11 @@ export default function TermsPage() {
 
         <h2>7. Intellectual property</h2>
         <p>
-          The Service, including its software, branding, and documentation, is owned by us or our licensors.
-          Subject to these Terms, we grant you a limited, non-exclusive, non-transferable licence to use the
-          Service for your internal or personal business purposes. You retain rights in content you submit; you
-          grant us a licence to process such content to operate the Service.
+          The Service, including its software, branding, and documentation, is owned by{" "}
+          <strong>{LEGAL_ENTITY_NAME}</strong> or its licensors. Subject to these Terms, we grant you a limited,
+          non-exclusive, non-transferable licence to use the Service for your internal or personal business
+          purposes. You retain rights in content you submit; you grant us a licence to process such content to
+          operate the Service.
         </p>
 
         <h2>8. Disclaimers</h2>
@@ -87,19 +88,21 @@ export default function TermsPage() {
 
         <h2>9. Limitation of liability</h2>
         <p>
-          TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE AND OUR SUPPLIERS SHALL NOT BE LIABLE FOR ANY INDIRECT,
-          INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, OR GOODWILL,
-          ARISING FROM YOUR USE OF THE SERVICE. OUR AGGREGATE LIABILITY FOR CLAIMS RELATING TO THE SERVICE SHALL
-          NOT EXCEED THE GREATER OF (A) THE AMOUNTS YOU PAID US FOR THE SERVICE IN THE TWELVE MONTHS BEFORE THE
-          CLAIM OR (B) FIFTY US DOLLARS (USD $50), IF YOU HAVE NOT PAID US. SOME JURISDICTIONS DO NOT ALLOW
-          CERTAIN LIMITATIONS; IN THOSE CASES OUR LIABILITY IS LIMITED TO THE FULLEST EXTENT PERMITTED BY LAW.
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, <strong>{LEGAL_ENTITY_NAME}</strong> AND ITS SUPPLIERS SHALL NOT
+          BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF
+          PROFITS, DATA, OR GOODWILL, ARISING FROM YOUR USE OF THE SERVICE. OUR AGGREGATE LIABILITY FOR CLAIMS
+          RELATING TO THE SERVICE SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNTS YOU PAID US FOR THE SERVICE IN
+          THE TWELVE MONTHS BEFORE THE CLAIM OR (B) FIFTY US DOLLARS (USD $50), IF YOU HAVE NOT PAID US. SOME
+          JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS; IN THOSE CASES OUR LIABILITY IS LIMITED TO THE FULLEST
+          EXTENT PERMITTED BY LAW.
         </p>
 
         <h2>10. Indemnity</h2>
         <p>
-          You will defend, indemnify, and hold harmless us and our affiliates from claims, damages, and expenses
-          (including reasonable legal fees) arising from your use of the Service, your content, or your breach
-          of these Terms, except to the extent caused by our wilful misconduct.
+          You will defend, indemnify, and hold harmless <strong>{LEGAL_ENTITY_NAME}</strong>, its affiliates,
+          and their respective directors, officers, and employees from claims, damages, and expenses (including
+          reasonable legal fees) arising from your use of the Service, your content, or your breach of these
+          Terms, except to the extent caused by our wilful misconduct.
         </p>
 
         <h2>11. Termination</h2>
@@ -109,17 +112,16 @@ export default function TermsPage() {
           limitations, and indemnity) will survive termination.
         </p>
 
-        <h2>12. Governing law</h2>
+        <h2>12. Governing law and jurisdiction</h2>
         <p>
-          These Terms are governed by the laws applicable to the operator of the Service, without regard to
-          conflict-of-law rules, except where mandatory consumer protections in your country require otherwise.
-          Courts in that jurisdiction shall have exclusive venue, subject to those mandatory rules.
+          These Terms are governed by and construed in accordance with the laws of the jurisdiction in which{" "}
+          <strong>{LEGAL_ENTITY_NAME}</strong> is incorporated, without regard to conflict-of-law principles,
+          except where mandatory consumer protection laws in your country of residence require otherwise.
         </p>
         <p>
-          <em>
-            Note: You should replace this section with the law and venue you choose after consulting qualified
-            counsel (for example, your country or state of incorporation).
-          </em>
+          You agree that the courts located in that jurisdiction shall have exclusive jurisdiction over disputes
+          arising out of or relating to these Terms or the Service, subject to any non-waivable right you may
+          have to bring proceedings in your home jurisdiction under applicable law.
         </p>
 
         <h2>13. Changes to these Terms</h2>
@@ -131,7 +133,7 @@ export default function TermsPage() {
 
         <h2>14. Contact</h2>
         <p>
-          Questions about these Terms:{" "}
+          Questions about these Terms for <strong>{LEGAL_ENTITY_NAME}</strong>:{" "}
           <a href="mailto:legal@globalkwfinder.com">legal@globalkwfinder.com</a>.
         </p>
       </LegalArticle>

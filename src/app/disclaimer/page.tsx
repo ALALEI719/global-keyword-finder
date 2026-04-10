@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
+import { LEGAL_ENTITY_NAME, SERVICE_NAME } from "@/lib/legal-entity"
 
 export const metadata: Metadata = {
   title: "Disclaimer | Multi-Language Keyword Finder",
   description:
-    "Important limitations regarding SEO data, third-party APIs, and use of keyword research results.",
+    "Important limitations regarding SEO data and Multi-Language Keyword Finder, operated by MetaForge Technology Limited.",
   robots: { index: true, follow: true },
 }
 
@@ -15,9 +16,9 @@ export default function DisclaimerPage() {
       <LegalHeader />
       <LegalArticle title="Disclaimer" lastUpdated="April 10, 2026">
         <p>
-          The information and outputs provided by <strong>Multi-Language Keyword Finder</strong> (the
-          “Service”) are for general research and informational purposes only. By using the Service, you
-          acknowledge and agree to the following.
+          The information and outputs provided through <strong>{SERVICE_NAME}</strong> (the “Service”) by{" "}
+          <strong>{LEGAL_ENTITY_NAME}</strong> are for general research and informational purposes only. By using
+          the Service, you acknowledge and agree to the following.
         </p>
 
         <h2>1. Not professional advice</h2>
