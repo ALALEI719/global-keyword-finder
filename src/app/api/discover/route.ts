@@ -7,25 +7,24 @@ import type { KeywordResult, DiscoverRequest } from "@/types"
 
 export async function POST(req: NextRequest) {
   const body: DiscoverRequest = await req.json()
-  const { keyword, sourceLang, targetCountry, apiToken, resultLimit = 30 } = body
+  const { keyword, sourceLang, targetCountry, resultLimit: rawLimit } = body
 
   if (!keyword?.trim()) {
     return NextResponse.json({ error: "Keyword is required" }, { status: 400 })
   }
 
-  const userToken = (apiToken || "").trim()
   const platformKey = (process.env.PLATFORM_AHREFS_KEY || "").trim()
-  const token = userToken || platformKey
-
-  if (!token) {
+  if (!platformKey) {
     return NextResponse.json(
       {
         error:
-          "Server is missing PLATFORM_AHREFS_KEY, and no Ahrefs API token was sent. Configure the platform key in Vercel (or .env.local) or enter your own token.",
+          "Server is missing PLATFORM_AHREFS_KEY. Configure the platform Ahrefs API key in Vercel or .env.local.",
       },
       { status: 503 }
     )
   }
+  const token = platformKey
+  const resultLimit = Math.min(30, Math.max(1, Number(rawLimit) || 30))
   const targetLang = COUNTRY_TO_LANG[targetCountry] || "en"
 
   // ── Step 1: Translate ────────────────────────────────────────────────────

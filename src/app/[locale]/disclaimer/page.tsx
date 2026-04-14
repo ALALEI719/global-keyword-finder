@@ -1,20 +1,33 @@
-import type { Metadata } from "next"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
 import { LEGAL_ENTITY_NAME, SERVICE_NAME } from "@/lib/legal-entity"
 
-export const metadata: Metadata = {
-  title: "Disclaimer | Multi-Language Keyword Finder",
-  description:
-    "Important limitations regarding SEO data and Multi-Language Keyword Finder, operated by MetaForge Technology Limited.",
-  robots: { index: true, follow: true },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "Meta" })
+  return {
+    title: t("disclaimerTitle"),
+    robots: { index: true, follow: true },
+  }
 }
 
-export default function DisclaimerPage() {
+export default async function DisclaimerPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tPage = await getTranslations({ locale, namespace: "LegalPages" })
+  const tNotice = await getTranslations({ locale, namespace: "LegalNotice" })
+
   return (
     <div className="flex flex-col flex-1 bg-[#020817]">
       <LegalHeader />
-      <LegalArticle title="Disclaimer" lastUpdated="April 10, 2026">
+      <LegalArticle title={tPage("disclaimer")} lastUpdated={tPage("lastUpdated")}>
+        {locale !== "en" && (
+          <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+            {tNotice("binding")}
+          </p>
+        )}
         <p>
           The information and outputs provided through <strong>{SERVICE_NAME}</strong> (the “Service”) by{" "}
           <strong>{LEGAL_ENTITY_NAME}</strong> are for general research and informational purposes only. By using
@@ -63,8 +76,15 @@ export default function DisclaimerPage() {
         </p>
 
         <p className="text-slate-400 text-sm pt-4">
-          For legal terms governing use of the Service, see our <a href="/terms">Terms of Service</a>. For data
-          practices, see our <a href="/privacy">Privacy Policy</a>.
+          For legal terms governing use of the Service, see our{" "}
+          <Link href="/terms" className="text-indigo-400 underline hover:text-indigo-300">
+            Terms of Service
+          </Link>
+          . For data practices, see our{" "}
+          <Link href="/privacy" className="text-indigo-400 underline hover:text-indigo-300">
+            Privacy Policy
+          </Link>
+          .
         </p>
       </LegalArticle>
     </div>

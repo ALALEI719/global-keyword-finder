@@ -1,20 +1,33 @@
-import type { Metadata } from "next"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
 import { LEGAL_ENTITY_NAME, LEGAL_ENTITY_SHORT, SERVICE_NAME, SITE_URL } from "@/lib/legal-entity"
 
-export const metadata: Metadata = {
-  title: "Terms of Service | Multi-Language Keyword Finder",
-  description:
-    "Terms governing your use of Multi-Language Keyword Finder, a service operated by MetaForge Technology Limited.",
-  robots: { index: true, follow: true },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "Meta" })
+  return {
+    title: t("termsTitle"),
+    robots: { index: true, follow: true },
+  }
 }
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tPage = await getTranslations({ locale, namespace: "LegalPages" })
+  const tNotice = await getTranslations({ locale, namespace: "LegalNotice" })
+
   return (
     <div className="flex flex-col flex-1 bg-[#020817]">
       <LegalHeader />
-      <LegalArticle title="Terms of Service" lastUpdated="April 10, 2026">
+      <LegalArticle title={tPage("terms")} lastUpdated={tPage("lastUpdated")}>
+        {locale !== "en" && (
+          <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+            {tNotice("binding")}
+          </p>
+        )}
         <p>
           These Terms of Service (“Terms”) govern your access to and use of <strong>{SERVICE_NAME}</strong> (the
           “Service”), provided by <strong>{LEGAL_ENTITY_NAME}</strong> (“{LEGAL_ENTITY_SHORT}”, “we”, “us”, or “our”)
@@ -26,8 +39,8 @@ export default function TermsPage() {
         <p>
           The Service provides tools to explore multilingual keywords, search metrics, and related information,
           using data from third-party providers (such as Ahrefs) and translation or language-processing
-          functionality. Features may include guest access, registered accounts, usage credits, and optional use
-          of your own API credentials.
+          functionality. Features may include guest access, registered accounts, and usage credits. The public
+          Service does not require you to supply your own Ahrefs API key.
         </p>
 
         <h2>2. Eligibility and accounts</h2>
@@ -45,7 +58,7 @@ export default function TermsPage() {
           <li>Reverse engineer, scrape, or automate the Service in a way that overloads, disrupts, or circumvents rate limits or technical controls;</li>
           <li>Use the Service to distribute malware, spam, or infringing or unlawful content;</li>
           <li>Misrepresent your identity or affiliation, or use the Service to mislead end users or search engines in ways that violate applicable platform or search-engine guidelines;</li>
-          <li>Resell or redistribute the Service or its outputs in a manner that breaches third-party API terms you have accepted.</li>
+          <li>Resell or redistribute the Service or its outputs in a manner that breaches applicable third-party or platform terms.</li>
         </ul>
 
         <h2>4. Third-party APIs and data</h2>
@@ -56,11 +69,10 @@ export default function TermsPage() {
           not guarantee completeness, accuracy, or fitness for any particular commercial outcome.
         </p>
 
-        <h2>5. Your API keys</h2>
+        <h2>5. Platform credentials</h2>
         <p>
-          If you supply your own API keys, you represent that you have the right to use them with the Service.
-          You remain responsible for fees, quotas, and compliance with the third party’s terms. We may store keys
-          only as needed to perform requests on your behalf when you use the Service.
+          We operate supported integrations (such as Ahrefs) using our own credentials. You agree not to attempt
+          to extract, misuse, or circumvent those integrations or their rate limits.
         </p>
 
         <h2>6. Free trial, credits, and changes</h2>
@@ -83,7 +95,11 @@ export default function TermsPage() {
         <p>
           THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR
           IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-          NON-INFRINGEMENT. See also our <a href="/disclaimer">Disclaimer</a>.
+          NON-INFRINGEMENT. See also our{" "}
+          <Link href="/disclaimer" className="text-indigo-400 underline hover:text-indigo-300">
+            Disclaimer
+          </Link>
+          .
         </p>
 
         <h2>9. Limitation of liability</h2>

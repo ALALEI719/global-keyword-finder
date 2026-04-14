@@ -1,20 +1,33 @@
-import type { Metadata } from "next"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
 import { LEGAL_ENTITY_NAME, LEGAL_ENTITY_SHORT, SERVICE_NAME, SITE_URL } from "@/lib/legal-entity"
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Multi-Language Keyword Finder",
-  description:
-    "How MetaForge Technology Limited collects, uses, and protects your data when you use Multi-Language Keyword Finder.",
-  robots: { index: true, follow: true },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "Meta" })
+  return {
+    title: t("privacyTitle"),
+    robots: { index: true, follow: true },
+  }
 }
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tPage = await getTranslations({ locale, namespace: "LegalPages" })
+  const tNotice = await getTranslations({ locale, namespace: "LegalNotice" })
+
   return (
     <div className="flex flex-col flex-1 bg-[#020817]">
       <LegalHeader />
-      <LegalArticle title="Privacy Policy" lastUpdated="April 10, 2026">
+      <LegalArticle title={tPage("privacy")} lastUpdated={tPage("lastUpdated")}>
+        {locale !== "en" && (
+          <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+            {tNotice("binding")}
+          </p>
+        )}
         <p>
           This Privacy Policy describes how <strong>{LEGAL_ENTITY_NAME}</strong> (“{LEGAL_ENTITY_SHORT}”, “we”,
           “us”, or “our”) collects, uses, stores, and shares information when you use{" "}
@@ -49,10 +62,9 @@ export default function PrivacyPage() {
             order to return results. We may retain limited operational logs to secure and improve the Service.
           </li>
           <li>
-            <strong>API credentials you provide</strong> — If you choose to enter your own third-party API key
-            (for example, for Ahrefs), that key may be stored or associated with your account so you do not
-            have to re-enter it. You should treat such keys as confidential. You may revoke or rotate keys at
-            the third-party provider at any time.
+            <strong>Keyword processing</strong> — We process the keywords and parameters you submit using our
+            infrastructure and authorised third-party APIs (such as Ahrefs) under credentials operated by us.
+            The public Service does not ask you to paste your own Ahrefs API key.
           </li>
           <li>
             <strong>Technical and analytics data</strong> — We may collect device and connection information
@@ -83,8 +95,8 @@ export default function PrivacyPage() {
         </p>
         <ul>
           <li>
-            <strong>Ahrefs</strong> — keyword metrics and related SEO data when requests are made with a valid
-            API token (yours or ours, as applicable).
+            <strong>Ahrefs</strong> — keyword metrics and related SEO data when requests are made using our
+            platform&apos;s authorised API access.
           </li>
           <li>
             <strong>Translation services</strong> — text may be sent to translation endpoints (for example,
@@ -99,7 +111,10 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Google Analytics</strong> — measurement of site usage as described in our{" "}
-            <a href="/cookies">Cookie Policy</a>.
+            <Link href="/cookies" className="text-indigo-400 underline hover:text-indigo-300">
+              Cookie Policy
+            </Link>
+            .
           </li>
         </ul>
         <p>

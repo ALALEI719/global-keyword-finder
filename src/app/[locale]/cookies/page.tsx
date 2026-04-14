@@ -1,24 +1,41 @@
-import type { Metadata } from "next"
+import { getTranslations, setRequestLocale } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
 import { LEGAL_ENTITY_NAME, LEGAL_ENTITY_SHORT, SERVICE_NAME } from "@/lib/legal-entity"
 
-export const metadata: Metadata = {
-  title: "Cookie Policy | Multi-Language Keyword Finder",
-  description:
-    "How MetaForge Technology Limited uses cookies on Multi-Language Keyword Finder, including Google Analytics.",
-  robots: { index: true, follow: true },
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "Meta" })
+  return {
+    title: t("cookiesTitle"),
+    robots: { index: true, follow: true },
+  }
 }
 
-export default function CookiesPage() {
+export default async function CookiesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const tPage = await getTranslations({ locale, namespace: "LegalPages" })
+  const tNotice = await getTranslations({ locale, namespace: "LegalNotice" })
+
   return (
     <div className="flex flex-col flex-1 bg-[#020817]">
       <LegalHeader />
-      <LegalArticle title="Cookie Policy" lastUpdated="April 10, 2026">
+      <LegalArticle title={tPage("cookies")} lastUpdated={tPage("lastUpdated")}>
+        {locale !== "en" && (
+          <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+            {tNotice("binding")}
+          </p>
+        )}
         <p>
           This Cookie Policy explains how <strong>{LEGAL_ENTITY_NAME}</strong> (“{LEGAL_ENTITY_SHORT}”, “we”,
           “us”) uses cookies and similar technologies in connection with <strong>{SERVICE_NAME}</strong> on our
-          website. It should be read together with our <a href="/privacy">Privacy Policy</a>.
+          website. It should be read together with our{" "}
+          <Link href="/privacy" className="text-indigo-400 underline hover:text-indigo-300">
+            Privacy Policy
+          </Link>
+          .
         </p>
 
         <h2>1. What are cookies?</h2>

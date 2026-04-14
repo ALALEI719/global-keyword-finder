@@ -15,7 +15,6 @@ export interface DiscoverRequest {
   keyword: string
   sourceLang: string
   targetCountry: string
-  apiToken?: string
   resultLimit?: number
 }
 

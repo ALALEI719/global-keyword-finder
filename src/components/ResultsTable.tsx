@@ -1,4 +1,6 @@
 "use client"
+
+import { useTranslations } from "next-intl"
 import type { KeywordResult } from "@/types"
 
 interface Props {
@@ -31,29 +33,52 @@ function intentBadge(intent: string) {
 }
 
 export default function ResultsTable({ results, sourceKw, translatedKw }: Props) {
+  const t = useTranslations("Results")
+  const tKd = useTranslations("Results.kdLevels")
+  const tIntent = useTranslations("Results.intents")
+
   if (!results.length) return null
+
+  const cols = ["num", "keyword", "meaning", "volume", "kd", "cpc", "intent"] as const
+
+  const kdKeys = ["Easy", "Medium", "Hard", "Very Hard"] as const
+  function kdLabel(level: string) {
+    if (level === "—") return ""
+    if (!kdKeys.includes(level as (typeof kdKeys)[number])) return level
+    return tKd(level as (typeof kdKeys)[number])
+  }
+
+  const intentKeys = ["Informational", "Commercial", "Transactional", "Navigational", "Mixed"] as const
+  function intentLabel(intent: string) {
+    if (!intentKeys.includes(intent as (typeof intentKeys)[number])) return intent
+    return tIntent(intent as (typeof intentKeys)[number])
+  }
 
   return (
     <div className="w-full mt-8">
       <div className="flex items-center justify-between mb-4">
-        <div>
-          <p className="text-sm text-slate-400">
-            <span className="text-slate-200 font-semibold">{results.length}</span> keywords found for{" "}
-            <span className="text-indigo-300 font-mono">"{sourceKw}"</span>
-            {translatedKw && translatedKw !== sourceKw && (
-              <> → <span className="text-violet-300 font-mono">"{translatedKw}"</span></>
-            )}
-          </p>
-        </div>
+        <p className="text-sm text-slate-400">
+          {t("found", { count: results.length, source: sourceKw })}
+          {translatedKw && translatedKw !== sourceKw && (
+            <>
+              {" "}
+              {t("arrow")}{" "}
+              <span className="text-violet-300 font-mono">&quot;{translatedKw}&quot;</span>
+            </>
+          )}
+        </p>
       </div>
 
       <div className="overflow-x-auto rounded-2xl border border-slate-800">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-slate-800 bg-slate-900/60">
-              {["#", "Keyword", "Meaning", "Volume", "KD", "CPC", "Intent"].map(h => (
-                <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap">
-                  {h}
+              {cols.map(h => (
+                <th
+                  key={h}
+                  className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap"
+                >
+                  {t(`cols.${h}`)}
                 </th>
               ))}
             </tr>
@@ -67,12 +92,12 @@ export default function ResultsTable({ results, sourceKw, translatedKw }: Props)
                 <td className="px-4 py-3 text-slate-300 font-medium">{fmt(r.volume)}</td>
                 <td className={`px-4 py-3 font-bold ${kdColor(r.kd)}`}>
                   {r.kd !== null ? r.kd : "—"}
-                  <span className="text-xs font-normal text-slate-600 ml-1">{r.kdLevel !== "—" ? r.kdLevel : ""}</span>
+                  <span className="text-xs font-normal text-slate-600 ml-1">{kdLabel(r.kdLevel)}</span>
                 </td>
                 <td className="px-4 py-3 text-slate-400">{r.cpc !== null ? `$${r.cpc.toFixed(2)}` : "—"}</td>
                 <td className="px-4 py-3">
                   <span className={`text-xs px-2 py-0.5 rounded-full border ${intentBadge(r.intent)}`}>
-                    {r.intent}
+                    {intentLabel(r.intent)}
                   </span>
                 </td>
               </tr>
