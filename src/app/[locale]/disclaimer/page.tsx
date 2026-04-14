@@ -1,8 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server"
-import { Link } from "@/i18n/navigation"
 import LegalHeader from "@/components/LegalHeader"
 import { LegalArticle } from "@/components/legal/LegalArticle"
-import { LEGAL_ENTITY_NAME, SERVICE_NAME } from "@/lib/legal-entity"
+import { LegalDisclaimerBody } from "@/components/legal/LegalDisclaimerBody"
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -17,75 +16,12 @@ export default async function DisclaimerPage({ params }: { params: Promise<{ loc
   const { locale } = await params
   setRequestLocale(locale)
   const tPage = await getTranslations({ locale, namespace: "LegalPages" })
-  const tNotice = await getTranslations({ locale, namespace: "LegalNotice" })
 
   return (
     <div className="flex flex-col flex-1 bg-[#020817]">
       <LegalHeader />
       <LegalArticle title={tPage("disclaimer")} lastUpdated={tPage("lastUpdated")}>
-        {locale !== "en" && (
-          <p className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
-            {tNotice("binding")}
-          </p>
-        )}
-        <p>
-          The information and outputs provided through <strong>{SERVICE_NAME}</strong> (the “Service”) by{" "}
-          <strong>{LEGAL_ENTITY_NAME}</strong> are for general research and informational purposes only. By using
-          the Service, you acknowledge and agree to the following.
-        </p>
-
-        <h2>1. Not professional advice</h2>
-        <p>
-          Nothing on the Service constitutes legal, tax, financial, or professional SEO or marketing advice.
-          You should consult qualified professionals before making business, compliance, or investment
-          decisions.
-        </p>
-
-        <h2>2. Third-party data and accuracy</h2>
-        <p>
-          Keyword metrics (including search volume, keyword difficulty, intent classifications, and related
-          fields) are sourced from third-party APIs and databases (such as Ahrefs) and from automated
-          translation or language-processing steps. Estimates may be incomplete, delayed, or inaccurate.
-          Rankings, volumes, and competition change over time and vary by location, device, and personalisation.
-        </p>
-
-        <h2>3. No guarantee of results</h2>
-        <p>
-          We do not guarantee any specific search ranking, traffic, revenue, or return on investment. Search
-          engines and advertising platforms set their own rules; compliance with those rules remains your
-          responsibility.
-        </p>
-
-        <h2>4. Your use of outputs</h2>
-        <p>
-          You are solely responsible for how you use keyword lists, translations, and other outputs — including
-          compliance with copyright, trademark, consumer protection, and advertising laws in each market where
-          you operate.
-        </p>
-
-        <h2>5. Service availability</h2>
-        <p>
-          The Service may be interrupted for maintenance, security, or reasons beyond our control (including
-          outages of third-party APIs). We do not warrant uninterrupted or error-free operation.
-        </p>
-
-        <h2>6. External links</h2>
-        <p>
-          The Service may reference or link to third-party sites. We are not responsible for their content or
-          practices.
-        </p>
-
-        <p className="text-slate-400 text-sm pt-4">
-          For legal terms governing use of the Service, see our{" "}
-          <Link href="/terms" className="text-indigo-400 underline hover:text-indigo-300">
-            Terms of Service
-          </Link>
-          . For data practices, see our{" "}
-          <Link href="/privacy" className="text-indigo-400 underline hover:text-indigo-300">
-            Privacy Policy
-          </Link>
-          .
-        </p>
+        <LegalDisclaimerBody locale={locale} />
       </LegalArticle>
     </div>
   )

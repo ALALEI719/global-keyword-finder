@@ -1,0 +1,16 @@
+{
+  "intro": "The information and outputs provided through {serviceName} (the “Service”) by {entityName} are for general research and informational purposes only. By using the Service, you acknowledge and agree to the following.",
+  "s1_title": "1. Not professional advice",
+  "s1_p1": "Nothing on the Service constitutes legal, tax, financial, or professional SEO or marketing advice. You should consult qualified professionals before making business, compliance, or investment decisions.",
+  "s2_title": "2. Third-party data and accuracy",
+  "s2_p1": "Keyword metrics (including search volume, keyword difficulty, intent classifications, and related fields) are sourced from third-party APIs and databases (such as Ahrefs) and from automated translation or language-processing steps. Estimates may be incomplete, delayed, or inaccurate. Rankings, volumes, and competition change over time and vary by location, device, and personalisation.",
+  "s3_title": "3. No guarantee of results",
+  "s3_p1": "We do not guarantee any specific search ranking, traffic, revenue, or return on investment. Search engines and advertising platforms set their own rules; compliance with those rules remains your responsibility.",
+  "s4_title": "4. Your use of outputs",
+  "s4_p1": "You are solely responsible for how you use keyword lists, translations, and other outputs — including compliance with copyright, trademark, consumer protection, and advertising laws in each market where you operate.",
+  "s5_title": "5. Service availability",
+  "s5_p1": "The Service may be interrupted for maintenance, security, or reasons beyond our control (including outages of third-party APIs). We do not warrant uninterrupted or error-free operation.",
+  "s6_title": "6. External links",
+  "s6_p1": "The Service may reference or link to third-party sites. We are not responsible for their content or practices.",
+  "footer": "For legal terms governing use of the Service, see our <termsLink>Terms of Service</termsLink>. For data practices, see our <privacyLink>Privacy Policy</privacyLink>."
+}

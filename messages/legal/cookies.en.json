@@ -1,0 +1,20 @@
+{
+  "intro": "This Cookie Policy explains how {entityName} (“{entityShort}”, “we”, “us”) uses cookies and similar technologies in connection with {serviceName} on our website. It should be read together with our <privacyLink>Privacy Policy</privacyLink>.",
+  "s1_title": "1. What are cookies?",
+  "s1_p1": "Cookies are small text files stored on your device when you visit a site. They help the site function, remember preferences, measure traffic, and improve user experience. Similar technologies include local storage and pixels.",
+  "s2_title": "2. How we use cookies",
+  "s2_intro": "We use cookies and related technologies for purposes such as:",
+  "s2_li1": "<strong>Essential / functional</strong> — To run the Service securely, maintain sessions (for example, when you sign in through our authentication provider), and remember choices you make.",
+  "s2_li2": "<strong>Analytics</strong> — To understand how visitors use our site in aggregate (for example, which pages are viewed and general traffic patterns).",
+  "s3_title": "3. Google Analytics",
+  "s3_p1": "We use Google Analytics 4 (Google LLC) with the measurement ID <strong>G-H1EWMGSPYG</strong>. Google Analytics may set cookies or use similar storage to collect information such as how often users visit, which pages they visit, and what other sites they used prior to coming to our site. We use this information to improve the Service.",
+  "s3_p2": "For more on how Google collects and processes data, see <gHow>How Google uses information from sites or apps that use our services</gHow>. You can opt out of Google Analytics using the <gOpt>Google Analytics Opt-out Browser Add-on</gOpt> where available, or by adjusting cookie settings in your browser.",
+  "s4_title": "4. Third-party cookies",
+  "s4_p1": "Some cookies may be set by third parties that provide services on our behalf (for example, authentication or hosting). Those parties’ use of data is described in their own policies.",
+  "s5_title": "5. Managing cookies",
+  "s5_p1": "Most browsers let you refuse or delete cookies through settings. If you block essential cookies, parts of the Service (such as staying signed in) may not work correctly.",
+  "s6_title": "6. Updates",
+  "s6_p1": "We may update this Cookie Policy from time to time. The “Last updated” date at the top reflects the latest revision.",
+  "s7_title": "7. Contact",
+  "s7_p1": "Questions for <entity>{entityName}</entity>: <email>privacy@globalkwfinder.com</email>."
+}

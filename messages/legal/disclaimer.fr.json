@@ -1,0 +1,16 @@
+{
+  "intro": "Les informations et résultats fournis via {serviceName} (le « Service ») par {entityName} le sont à titre de recherche générale et d’information uniquement. En utilisant le Service, vous reconnaissez et acceptez ce qui suit.",
+  "s1_title": "1. Pas de conseil professionnel",
+  "s1_p1": "Rien sur le Service ne constitue un conseil juridique, fiscal, financier ou professionnel en SEO ou marketing. Consultez des professionnels qualifiés avant toute décision commerciale, de conformité ou d’investissement.",
+  "s2_title": "2. Données tierces et exactitude",
+  "s2_p1": "Les métriques de mots-clés (volume de recherche, difficulté, classifications d’intention, etc.) proviennent d’API et bases tierces (telles qu’Ahrefs) et d’étapes automatisées de traduction ou de traitement linguistique. Les estimations peuvent être incomplètes, retardées ou inexactes. Classements, volumes et concurrence évoluent dans le temps et varient selon le lieu, l’appareil et la personnalisation.",
+  "s3_title": "3. Aucune garantie de résultat",
+  "s3_p1": "Nous ne garantissons aucun classement de recherche, trafic, chiffre d’affaires ou retour sur investissement spécifique. Les moteurs de recherche et plateformes publicitaires fixent leurs propres règles ; le respect de ces règles reste de votre responsabilité.",
+  "s4_title": "4. Votre usage des résultats",
+  "s4_p1": "Vous êtes seul responsable de l’usage que vous faites des listes de mots-clés, traductions et autres résultats — y compris la conformité aux lois sur le droit d’auteur, les marques, la protection des consommateurs et la publicité sur chaque marché où vous opérez.",
+  "s5_title": "5. Disponibilité du Service",
+  "s5_p1": "Le Service peut être interrompu pour maintenance, sécurité ou raisons indépendantes de notre volonté (y compris pannes d’API tierces). Nous ne garantissons ni un fonctionnement ininterrompu ni l’absence d’erreurs.",
+  "s6_title": "6. Liens externes",
+  "s6_p1": "Le Service peut référencer ou renvoyer vers des sites tiers. Nous ne sommes pas responsables de leur contenu ou de leurs pratiques.",
+  "footer": "Pour les conditions juridiques d’utilisation du Service, voir nos <termsLink>Conditions d’utilisation</termsLink>. Pour les pratiques de données, voir notre <privacyLink>Politique de confidentialité</privacyLink>."
+}

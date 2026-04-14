@@ -1,0 +1,20 @@
+{
+  "intro": "La présente Politique des cookies explique comment {entityName} (« {entityShort} », « nous ») utilise les cookies et technologies similaires dans le cadre de {serviceName} sur notre site. Elle doit être lue avec notre <privacyLink>Politique de confidentialité</privacyLink>.",
+  "s1_title": "1. Qu’est-ce qu’un cookie ?",
+  "s1_p1": "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site. Ils aident le site à fonctionner, mémorisent des préférences, mesurent le trafic et améliorent l’expérience. Les technologies similaires incluent le stockage local et les pixels.",
+  "s2_title": "2. Comment nous utilisons les cookies",
+  "s2_intro": "Nous utilisons des cookies et technologies associées aux fins suivantes :",
+  "s2_li1": "<strong>Essentiels / fonctionnels</strong> — Pour faire fonctionner le Service en toute sécurité, maintenir les sessions (par exemple lorsque vous vous connectez via notre fournisseur d’authentification) et mémoriser vos choix.",
+  "s2_li2": "<strong>Analytique</strong> — Pour comprendre de manière agrégée comment les visiteurs utilisent notre site (par exemple quelles pages sont consultées et les schémas de trafic généraux).",
+  "s3_title": "3. Google Analytics",
+  "s3_p1": "Nous utilisons Google Analytics 4 (Google LLC) avec l’identifiant de mesure <strong>G-H1EWMGSPYG</strong>. Google Analytics peut déposer des cookies ou utiliser un stockage similaire pour collecter des informations telles que la fréquence des visites, les pages consultées et les sites utilisés avant d’arriver sur le nôtre. Nous utilisons ces informations pour améliorer le Service.",
+  "s3_p2": "Pour en savoir plus sur la collecte et le traitement des données par Google, voir <gHow>Comment Google utilise les informations des sites ou applications qui utilisent nos services</gHow>. Vous pouvez refuser Google Analytics via le <gOpt>module complémentaire de navigateur pour la désactivation de Google Analytics</gOpt> lorsqu’il est disponible, ou en ajustant les paramètres des cookies dans votre navigateur.",
+  "s4_title": "4. Cookies tiers",
+  "s4_p1": "Certains cookies peuvent être déposés par des tiers qui fournissent des services pour notre compte (par exemple authentification ou hébergement). Leur usage des données est décrit dans leurs propres politiques.",
+  "s5_title": "5. Gestion des cookies",
+  "s5_p1": "La plupart des navigateurs permettent de refuser ou de supprimer les cookies via les paramètres. Si vous bloquez les cookies essentiels, certaines parties du Service (comme rester connecté) peuvent ne pas fonctionner correctement.",
+  "s6_title": "6. Mises à jour",
+  "s6_p1": "Nous pouvons mettre à jour la présente Politique des cookies. La date de « Dernière mise à jour » en tête de page reflète la dernière révision.",
+  "s7_title": "7. Contact",
+  "s7_p1": "Questions pour <entity>{entityName}</entity> : <email>privacy@globalkwfinder.com</email>."
+}

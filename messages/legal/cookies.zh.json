@@ -1,0 +1,20 @@
+{
+  "intro": "本 Cookie 政策说明 {entityName}（“{entityShort}”“我们”）如何在网站上就 {serviceName} 使用 Cookie 及类似技术。请一并阅读我们的 <privacyLink>隐私政策</privacyLink>。",
+  "s1_title": "1. 什么是 Cookie",
+  "s1_p1": "Cookie 是您访问网站时存储在设备上的小型文本文件，用于使网站正常运行、记住偏好、衡量流量并改善体验。类似技术包括本地存储与像素。",
+  "s2_title": "2. 我们如何使用 Cookie",
+  "s2_intro": "我们将 Cookie 及相关技术用于以下目的：",
+  "s2_li1": "<strong>必要/功能</strong> — 安全运行服务、维持会话（例如通过身份验证服务商登录时）并记住您的选择。",
+  "s2_li2": "<strong>分析</strong> — 以汇总方式了解访客如何使用网站（例如浏览了哪些页面及整体流量模式）。",
+  "s3_title": "3. Google Analytics",
+  "s3_p1": "我们使用 Google Analytics 4（Google LLC），衡量 ID 为 <strong>G-H1EWMGSPYG</strong>。Google Analytics 可能设置 Cookie 或使用类似存储，以收集访问频率、页面浏览及进入本站前的来源网站等信息。我们利用这些信息改进服务。",
+  "s3_p2": "关于 Google 如何收集与处理数据，请参阅 <gHow>Google 如何使用来自使用我们服务的网站或应用的信息</gHow>。您可在可用时使用 <gOpt>Google Analytics 退出浏览器插件</gOpt> 选择退出，或通过浏览器设置管理 Cookie。",
+  "s4_title": "4. 第三方 Cookie",
+  "s4_p1": "部分 Cookie 可能由代表我们提供服务的第三方设置（例如身份验证或托管）。其数据使用以其各自政策为准。",
+  "s5_title": "5. 管理 Cookie",
+  "s5_p1": "多数浏览器允许在设置中拒绝或删除 Cookie。若屏蔽必要 Cookie，服务的部分功能（例如保持登录）可能无法正常工作。",
+  "s6_title": "6. 更新",
+  "s6_p1": "我们可能不时更新本 Cookie 政策。文首“最近更新”日期反映最新修订。",
+  "s7_title": "7. 联系方式",
+  "s7_p1": "若对 <entity>{entityName}</entity> 有疑问，请联系：<email>privacy@globalkwfinder.com</email>。"
+}
