@@ -33,7 +33,13 @@ export default function NavBar({ userEmail, onLogout }: NavBarProps) {
               Multi-Language Keyword Finder
             </span>
           </Link>
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+            <Link
+              href="/blog"
+              className="text-sm text-slate-400 hover:text-indigo-300 transition-colors font-medium whitespace-nowrap"
+            >
+              {t("blog")}
+            </Link>
             <LanguageSwitcher />
             {userEmail ? (
               <>

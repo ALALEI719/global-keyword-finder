@@ -5,12 +5,22 @@
     "privacyTitle": "隐私政策 | 多语言关键词工具",
     "termsTitle": "服务条款 | 多语言关键词工具",
     "cookiesTitle": "Cookie 政策 | 多语言关键词工具",
-    "disclaimerTitle": "免责声明 | 多语言关键词工具"
+    "disclaimerTitle": "免责声明 | 多语言关键词工具",
+    "blogTitle": "博客 | 多语言关键词工具",
+    "blogDescription": "国际 SEO 技巧、跨境关键词研究与多市场搜索意图指南。"
   },
   "Nav": {
     "login": "登录 / 注册",
     "logout": "退出",
-    "language": "语言"
+    "language": "语言",
+    "blog": "博客",
+    "home": "首页"
+  },
+  "Blog": {
+    "title": "博客",
+    "subtitle": "多语言 SEO、关键词发现与跨市场搜索意图的实用指南。",
+    "readTime": "分钟阅读",
+    "backToBlog": "返回博客列表"
   },
   "Home": {
     "titleBefore": "多语言",
@@ -75,6 +85,7 @@
     }
   },
   "Footer": {
+    "blog": "博客",
     "privacy": "隐私政策",
     "terms": "服务条款",
     "cookies": "Cookie 政策",

@@ -5,12 +5,22 @@
     "privacyTitle": "Privacy Policy | Multi-Language Keyword Finder",
     "termsTitle": "Terms of Service | Multi-Language Keyword Finder",
     "cookiesTitle": "Cookie Policy | Multi-Language Keyword Finder",
-    "disclaimerTitle": "Disclaimer | Multi-Language Keyword Finder"
+    "disclaimerTitle": "Disclaimer | Multi-Language Keyword Finder",
+    "blogTitle": "Blog | Multi-Language Keyword Finder",
+    "blogDescription": "International SEO tips, cross-border keyword research, and search intent guides for global marketers."
   },
   "Nav": {
     "login": "Login / Register",
     "logout": "Logout",
-    "language": "Language"
+    "language": "Language",
+    "blog": "Blog",
+    "home": "Home"
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Practical guides on multilingual SEO, keyword discovery, and cross-market search intent.",
+    "readTime": "min read",
+    "backToBlog": "Back to Blog"
   },
   "Home": {
     "titleBefore": "Multi-Language",
@@ -75,6 +85,7 @@
     }
   },
   "Footer": {
+    "blog": "Blog",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy",
