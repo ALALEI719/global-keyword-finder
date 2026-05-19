@@ -17,10 +17,16 @@
     "home": "首页"
   },
   "Blog": {
-    "title": "博客",
+    "kicker": "洞察",
+    "titleBefore": "国际 SEO",
+    "titleHighlight": "博客",
     "subtitle": "多语言 SEO、关键词发现与跨市场搜索意图的实用指南。",
     "readTime": "分钟阅读",
-    "backToBlog": "返回博客列表"
+    "readArticle": "阅读文章",
+    "backToBlog": "返回博客列表",
+    "ctaTitle": "几秒钟找到目标市场真实关键词",
+    "ctaBody": "输入一个种子词，立即获得翻译变体，以及目标市场的 Ahrefs 搜索量、KD 与意图标签。",
+    "ctaButton": "打开关键词工具"
   },
   "Home": {
     "titleBefore": "多语言",

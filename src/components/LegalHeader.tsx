@@ -1,5 +1,5 @@
-import SiteHeader from "@/components/SiteHeader"
+import SiteNavBar from "@/components/SiteNavBar"
 
 export default function LegalHeader() {
-  return <SiteHeader />
+  return <SiteNavBar />
 }

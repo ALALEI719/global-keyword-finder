@@ -17,10 +17,16 @@
     "home": "Home"
   },
   "Blog": {
-    "title": "Blog",
+    "kicker": "Insights",
+    "titleBefore": "International SEO",
+    "titleHighlight": "Blog",
     "subtitle": "Practical guides on multilingual SEO, keyword discovery, and cross-market search intent.",
     "readTime": "min read",
-    "backToBlog": "Back to Blog"
+    "readArticle": "Read article",
+    "backToBlog": "Back to Blog",
+    "ctaTitle": "Find your real local keywords in seconds",
+    "ctaBody": "Enter a single seed keyword and get translated variants plus Ahrefs-backed volume, KD, and intent for each market you care about.",
+    "ctaButton": "Open keyword finder"
   },
   "Home": {
     "titleBefore": "Multi-Language",

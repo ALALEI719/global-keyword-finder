@@ -17,10 +17,16 @@
     "home": "Accueil"
   },
   "Blog": {
-    "title": "Blog",
+    "kicker": "Insights",
+    "titleBefore": "SEO international —",
+    "titleHighlight": "Blog",
     "subtitle": "Guides pratiques sur le SEO multilingue, la découverte de mots-clés et l'intention de recherche par marché.",
     "readTime": "min de lecture",
-    "backToBlog": "Retour au blog"
+    "readArticle": "Lire l'article",
+    "backToBlog": "Retour au blog",
+    "ctaTitle": "Trouvez vos vrais mots-clés locaux en quelques secondes",
+    "ctaBody": "Entrez un mot-clé racine et obtenez les variantes traduites avec volume, KD et intention Ahrefs pour chaque marché qui vous intéresse.",
+    "ctaButton": "Ouvrir l'outil"
   },
   "Home": {
     "titleBefore": "Multi-Language",
