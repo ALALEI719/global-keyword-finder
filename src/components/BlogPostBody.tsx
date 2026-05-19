@@ -29,6 +29,21 @@ export default function BlogPostBody({ blocks }: { blocks: BlogBlock[] }) {
             </ul>
           )
         }
+        if (block.type === "callout") {
+          return (
+            <aside
+              key={i}
+              className="my-8 rounded-xl border border-amber-500/25 bg-gradient-to-br from-amber-500/8 via-amber-500/5 to-transparent ring-1 ring-amber-500/15 px-6 py-5"
+            >
+              <p className="text-[15px] md:text-base leading-relaxed text-slate-200">
+                <span className="font-bold text-amber-300 tracking-wide uppercase text-xs mr-2 align-middle">
+                  {block.label}
+                </span>
+                {block.text}
+              </p>
+            </aside>
+          )
+        }
         return (
           <p
             key={i}
